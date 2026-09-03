@@ -1,0 +1,44 @@
+{
+  "name": "credit-repair-platform",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts",
+    "seed:templates": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed-templates.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.19.0",
+    "next": "14.2.5",
+    "next-auth": "^4.24.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "bcryptjs": "^2.4.3",
+    "zod": "^3.23.8",
+    "@aws-sdk/client-s3": "^3.620.0",
+    "@aws-sdk/s3-request-presigner": "^3.620.0",
+    "pdf-lib": "^1.17.1",
+    "otplib": "^12.0.1",
+    "qrcode": "^1.5.3",
+    "stripe": "^16.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.3",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/qrcode": "^1.5.5",
+    "typescript": "^5.5.4",
+    "prisma": "^5.19.0",
+    "tailwindcss": "^3.4.7",
+    "postcss": "^8.4.40",
+    "autoprefixer": "^10.4.19",
+    "ts-node": "^10.9.2"
+  }
+}
